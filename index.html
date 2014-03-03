@@ -156,7 +156,7 @@ puts <span class="hl str">"Esto es jauja"</span></code>
   lugar donde esté instalado Ruby, basta con que esté en el camino de ejecución</p>
 
 
-  <p>La segunda línea ya sí está escrita en el lenguaje Ruby (aunque
+  <p>La siguiente línea no vacía ya sí está escrita en el lenguaje Ruby (aunque
   usa la misma orden que C, <code>put
   string</code>), pero tampoco es que extrañe demasiado. La cadena va
   entre comillas, se usa el cambio de línea para acabar la sentencia,
@@ -164,7 +164,8 @@ puts <span class="hl str">"Esto es jauja"</span></code>
 
 <p>Para ejecutarlo se guarda y se hace lo que se ha dicho antes, no
   voy a repetirlo. Y el resultado será el esperado. También pasará lo
-  mismo si lo hacemos desde <code>irb</code>:</p>
+  mismo si lo hacemos desde <code>irb</code>, el intérprete
+  interactivo (que también se instala con RVM):</p>
 <code class="ejemplo">[jmerelo@leonard ruby-para-impacientes]$ <span class="user">irb</span>
 pirb(main):001:0&gt; <span class="user">puts "esto es jauja"</span>
 esto es jauja
@@ -172,7 +173,7 @@ esto es jauja
 
 <p>Pero Ruby es un lenguaje orientado a objetos, o más bien empotrado
   de objetos: todo es un objeto en Ruby. Así que lo anterior (y algo más) podríamos
-  escribirlo de la forma siguiente.</p>
+  escribirlo <a href='code/jauja-center.rb'>de la forma siguiente</a>.</p>
 <code class="ejemplo">puts <span class="hl str">"--"</span> <span class="hl sym">&lt;&lt;</span> <span class="hl str">"Esto es jauja"</span><span class="hl sym">.</span><span class="hl kwd">center</span><span class="hl sym">(</span><span class="hl num">20</span><span class="hl sym">) &lt;&lt;</span> <span class="hl str">"--"</span></code>
 
   <p>Lo que consigue este program es escribir una cadena centrada en
@@ -180,11 +181,7 @@ esto es jauja
   (<code>--</code>). <code>&lt;&lt;</code> es el operador de 
  concatenación, que pega una cadena a la siguiente. Pero la 
  parte orientada a objetos está alrededor del 
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-    <code>.</code> .<code>center</code> es un método de la 
-=======
     <code>.center</code> es un método de la 
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
  clase <a href="http://ruby-doc.org/core/classes/String.html">String</a>, 
  pero como todo es un objeto en Ruby, no hace falta que lo 
  declaremos explícitamente, ya es un objeto de por sí, por lo que
@@ -202,13 +199,10 @@ esto es jauja
 puts <span class="hl str">"--"</span> <span class="hl sym">&lt;&lt;</span> jauja<span class="hl sym">.</span><span class="hl kwd">center</span><span class="hl sym">(</span><span class="hl num">20</span><span class="hl sym">) &lt;&lt;</span> <span class="hl str">"--"</span>
 </code>
 En la primera línea vemos un par de cosas: como en otros lenguajes,
-las variables en Ruby no tienen ningún tipo de carácter
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-adicional. Sólo la variable, lo que tiene sentido, porque hace que uno
-=======
+las variables en Ruby no tienen ningún  carácter
 adicional (en realidad se verán más adelante algunos caracteres, que
-    se usan principalmente para resolución de ámbito). Sólo la variable, lo que tiene sentido, porque hace que uno
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
+    se usan principalmente para resolución de ámbito). Sólo el nombre
+de la variable, lo que tiene sentido, porque hace que uno
 tenga que escribir menos. Por otro lado, <code>String</code> es una
 clase, y además una clase estándar, por lo que no hay que decirle al
 programa que la incluya ni nada. El método <code>new</code> es un
@@ -249,11 +243,7 @@ Que, aparte de introducir las llaves (para claves... ¿lo ves como se
 	  trata de no sorprender?) pone unos dos puntitos delante de
 	  las mismas que la verdad que sí sorprenden. Y es porque se
 	  trata de cadens un poco especiales, denominadas
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-	  símbolos. Los símbolos en Ruby son como cadenas con las que
-=======
 	  <em>símbolos</em>. Los símbolos en Ruby son como cadenas con las que
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
 	  no se va hacer nada de lo que se suele hacer con las mismas:
 	  ni partirlas, ni añadirles nada, ni quitarles nada. Unas
 	  cadenas constantes, más o menos, que no es otra cosa lo que
