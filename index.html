@@ -37,7 +37,7 @@
       </ul>
     </div>
 
-<h2><a name="1:t1:intro">1.1 ¿Ruby? Pero si es muy
+<h2><a name="1:t1:intro">¿Ruby? Pero si es muy
   fácil </a> <a href="#1:t1:intro" style="font-size:small">#</a></h2>
 
 
@@ -72,12 +72,12 @@
   haces los ejemplos y actividades de este tutorial, ¿por qué no?</p>
 
 
-<h2><a name="1:primer">1.2 Primer programa </a> <a href="#1:primer" style="font-size:small">#</a></h2>
+<h2><a name="1:primer">Primer programa </a> <a href="#1:primer" style="font-size:small">#</a></h2>
 
 
 <div class="aclara" style="width:300"><p>Desde Ubuntu, Guadalinex o
-    Debian, haz <code>sudo apt-get install ruby irb rubygems
-      rdoc</code>.</p>
+    Debian, haz</p>
+ <code>sudo apt-get install ruby irb rubygems  rdoc</code>.
 
 <p>También puedes instalar
   el <a href='https://www.ruby-lang.org/es/downloads/'>Ruby Version
@@ -125,8 +125,9 @@ y que se instala directamente como una aplicación de usuario. Trabajar
   popular es la <em>oficial</em>, la de Matz (llamada a veces
   MRI). Hay, sin embargo, otras como JRuby (dentro de la máquina
   virtual Java) o
-  incluso <a href="http://en.wikipedia.org/wiki/YARV">YARV o KRI</a>,
-  que se ha convertido a partir de la versión 1.9 en la "oficial". En
+  incluso <a href="http://en.wikipedia.org/wiki/Rubinius">Rubinius</a>
+  una versión que trata de implementar la mayor parte de Ruby usando
+  el propio lenguaje y diseñada para que sea concurrente. En
   tu ordenador puede que tengas una u otra, aunque también te puedes
   instalar <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29#Implementations">cualquier
     otra</a>.  Aconsejamos que se use la oficial para la distribución
@@ -171,12 +172,26 @@ pirb(main):001:0&gt; <span class="user">puts "esto es jauja"</span>
 esto es jauja
 =&gt; nil</code>
 
+<h2><a name="2:Objetos">Ruby, un lenguaje orientado a objetos </a> <a href="#2:Objetos" style="font-size:small">#</a></h2>
+<div class="aclara" style="width:300"><h3>Cuidado con el copy/paste
+    para programas en Ruby</h3>
+
+<p>Como Ruby usa la indentación mediante tabuladores para indicar
+  bloques, los copia/pega de las páginas web no tienen por qué
+  funcionar bien. Es mejor descargar los programas enlazados pulsando
+  con el botón de la derecha y <em>salvar como</em> o descargarlos del
+  directorio en GitHub</p>
+
+</div>
+
 <p>Pero Ruby es un lenguaje orientado a objetos, o más bien empotrado
   de objetos: todo es un objeto en Ruby. Así que lo anterior (y algo más) podríamos
-  escribirlo <a href='code/jauja-center.rb'>de la forma siguiente</a>.</p>
+  escribirlo <a href='code/jauja-center.rb'>de la forma
+  siguiente</a>.</p>
+
 <code class="ejemplo">puts <span class="hl str">"--"</span> <span class="hl sym">&lt;&lt;</span> <span class="hl str">"Esto es jauja"</span><span class="hl sym">.</span><span class="hl kwd">center</span><span class="hl sym">(</span><span class="hl num">20</span><span class="hl sym">) &lt;&lt;</span> <span class="hl str">"--"</span></code>
 
-  <p>Lo que consigue este program es escribir una cadena centrada en
+  <p>Lo que consigue este programa es escribir una cadena centrada en
   una línea de 20 caracteres y rodeada por dos guiones
   (<code>--</code>). <code>&lt;&lt;</code> es el operador de 
  concatenación, que pega una cadena a la siguiente. Pero la 
@@ -186,19 +201,21 @@ esto es jauja
  pero como todo es un objeto en Ruby, no hace falta que lo 
  declaremos explícitamente, ya es un objeto de por sí, por lo que
  podemos aplicarle los métodos correspondientes, tales como
- ese. Pasándole el argumento 20, centra la cadena en un espacio de 20
- caracteres:
+ ese. Pasándole el argumento 20, centra la cadena en un espacio
+ equivalente a 20
+    caracteres:</p>
 <code class="ejemplo">usuario@usuario-desktop:~/code$ <span class="user">./jauja-center.rb </span>
 --   Esto es jauja    --
 </code>
-  </p>
 
 <p>También podíamos haber creado el objeto explícitamente, pero
-  hubiera sido mucho más clásico:
+  hubiera sido mucho más clásico:</p>
+
 <code class="ejemplo">jauja <span class="hl sym">=</span> String<span class="hl sym">::</span><span class="hl kwd">new</span><span class="hl sym">(</span> <span class="hl str">"Esto es jauja"</span> <span class="hl sym">)</span>
 puts <span class="hl str">"--"</span> <span class="hl sym">&lt;&lt;</span> jauja<span class="hl sym">.</span><span class="hl kwd">center</span><span class="hl sym">(</span><span class="hl num">20</span><span class="hl sym">) &lt;&lt;</span> <span class="hl str">"--"</span>
 </code>
-En la primera línea vemos un par de cosas: como en otros lenguajes,
+
+  <p>En la primera línea, en la que definimos una variable llamada <code>jauja</code> vemos un par de cosas: como en otros lenguajes,
 las variables en Ruby no tienen ningún  carácter
 adicional (en realidad se verán más adelante algunos caracteres, que
     se usan principalmente para resolución de ámbito). Sólo el nombre
@@ -209,9 +226,9 @@ programa que la incluya ni nada. El método <code>new</code> es un
 método de clase, con lo que la sintaxis para llamarlo, a diferencia del método de un
 objeto, es de cuatro puntos (dos puntos dobles). El contenido de la
 variable sigue siendo un objeto, así que se usa de la misma forma que
-antes. 
+antes. </p>
 
-El resto de los tipos de datos se define también de la forma más
+<p>El resto de los tipos de datos se define también de la forma más
 lógica; Ruby trabaja bajo el principio de la mínima sorpresa (lo que
 muchas veces provoca sorpresa viniendo de otros lenguajes), o más bien
 de la máxima coherencia: una vez aprendida parte del lenguaje, el
@@ -233,13 +250,14 @@ como, imagino, era de esperar. </p>
   aquellas que usan una clave para acceder a cada uno de los elementos
   (en vez de hacerlo en secuencia), sumamente útiles para evitar la
   distribución de la información de una estructura de datos por
-  múltiples matrices y su acceso fácil usando una clave
+  múltiples matrices y su acceso fácil usando una clave</p>
 <code class="ejemplo">sonido_de <span class="hl sym">= { :</span>vaca <span class="hl sym">=&gt;</span> <span class="hl str">'muuu'</span><span class="hl sym">,</span>
 	  <span class="hl sym">:</span>buho <span class="hl sym">=&gt;</span> <span class="hl str">'uuu'</span><span class="hl sym">,</span>
 	  <span class="hl sym">:</span>caballo <span class="hl sym">=&gt;</span> <span class="hl str">'iiiii'</span> <span class="hl sym">}</span>
-	  puts sonido_de<span class="hl sym">.</span>inspect
+puts sonido_de<span class="hl sym">.</span>inspect
 </code>
-Que, aparte de introducir las llaves (para claves... ¿lo ves como se
+
+<p>Que, aparte de introducir las llaves (para claves... ¿lo ves como se
 	  trata de no sorprender?) pone unos dos puntitos delante de
 	  las mismas que la verdad que sí sorprenden. Y es porque se
 	  trata de cadens un poco especiales, denominadas
@@ -260,7 +278,7 @@ que al ejecutarse, por usar <code>to_s</code> para convertir a una
 se ve nada, pero es otra forma de hacer las cosas.</p>
 
 
-<h2><a name="1:es">1.3 Entrada y Salida </a> <a href="#1:es" style="font-size:small">#</a></h2>
+<h2><a name="1:es">Entrada y Salida. Y, de camino, bucles. </a> <a href="#1:es" style="font-size:small">#</a></h2>
 
 
 
@@ -377,7 +395,7 @@ fname <span class="hl sym">=</span> url <span class="hl sym">+</span> <span clas
   escritura. Como se ve, no hace falta cerrarlo. Pa qué, si ya sabe
   hacerlo el ordenador. </p>
 
-<h2><a name="1:bloques">1.4 Bloques </a> <a href="#1:bloques" style="font-size:small">#</a></h2>
+<h2><a name="1:bloques">4 Bloques </a> <a href="#1:bloques" style="font-size:small">#</a></h2>
 
 
 
@@ -455,7 +473,7 @@ misma. De camino, vemos como se definen funciones en ruby: usando
 también <code>def</code>. Igual que antes, salvo que ahora damos un nombre al
 bloque, lo que le da más derechos, al parecer.</p>
 
-<h2><a name="1:cpan">1.5 Instalando nuevos módulos </a> <a href="#1:cpan" style="font-size:small">#</a></h2>
+<h2><a name="1:cpan">5 Instalando nuevos módulos </a> <a href="#1:cpan" style="font-size:small">#</a></h2>
 
 
 
@@ -525,7 +543,7 @@ Could not find main page README
   paquete (en mi caso, sólo una denominada <code>deprecated</code>)</p>
 
 
-<h2><a name="1:hpricot">1.6 Rascando HTML: hpricot </a> <a href="#1:hpricot" style="font-size:small">#</a></h2>
+<h2><a name="1:hpricot">6 Rascando HTML: hpricot </a> <a href="#1:hpricot" style="font-size:small">#</a></h2>
 
 
 
@@ -568,7 +586,7 @@ osl<span class="hl sym">.</span><span class="hl kwd">search</span><span class="h
       usar también WWW::Mechanize</a>, una versión de la librería en Perl.</p>
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
 
-<h2><a name="1:t1:biblio">1.7 Bibliografía </a> <a href="#1:t1:biblio" style="font-size:small">#</a></h2>
+<h2><a name="1:t1:biblio">7 Bibliografía </a> <a href="#1:t1:biblio" style="font-size:small">#</a></h2>
 
 
 
