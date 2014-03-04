@@ -141,44 +141,17 @@ div.ejercicios:before {
   font-size: large
 }
 
-div.tabla {
-  font-size:medium;
-  background-color: linen;
-  color: black;
-  border-style: double;
-  border-color: black;
-  border-width: 2pt;
-  float: right;
-  width: 250px;
-}
-
-div.tabla:before { 
-  content: "Contenido de esta sección";
-  font-weight: bold;
-}
-
 div.aclara {
   background-color: white;
   color: black;
   border-style: double;
   border-color: black;
   border-width: 2pt;
-  width: 400px;
+  width: 40%;
   float: right;
-  padding: 5px;
+  padding: 10px;
+  margin: 10px;
   font-size: 0.8em;
-}
-
-div.aclara2 {
-  font-size:medium;
-  background-color: white;
-  color: black;
-  border-style: double;
-  border-color: black;
-  border-width: 2pt;
-  width: 100%;
-  float: right;
-  padding: 2px;
 }
 
 div.nav {
