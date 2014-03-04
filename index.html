@@ -234,7 +234,7 @@ resto es más o menos igual. Por ejemplo, las matrices:
 puts matriz<span class="hl sym">.</span>join <span class="hl sym">&lt;&lt;</span> <span class="hl str">" "</span> <span class="hl sym">&lt;&lt;</span> matriz<span class="hl sym">.</span><span class="hl kwd">join</span><span class="hl sym">(</span><span class="hl str">"-"</span><span class="hl sym">)</span>
 </code>
 Como ocurre en otros lenguajes dinámicos como el Ruby, no hay
-distinción de tipos: una matriz puede contener números enteros,
+distinción de tipos, o mejor dicho, hay tipificación dinámica: una matriz puede contener números enteros,
 cadenas e incluso otras matrices, y desde su creación son objetos de
 pleno derecho, pudiéndosele aplicar métodos como <code>join</code> que
 une todos los elementos de la matriz, con o sin algún carácter de por
@@ -257,7 +257,7 @@ puts sonido_de<span class="hl sym">.</span>inspect
 <p>Que, aparte de introducir las llaves (para claves... ¿lo ves como se
 	  trata de no sorprender?) pone unos dos puntitos delante de
 	  las mismas que la verdad que sí sorprenden. Y es porque se
-	  trata de cadens un poco especiales, denominadas
+	  trata de cadenas un poco especiales, denominadas
 	  <em>símbolos</em>. Los símbolos en Ruby son como cadenas con las que
 	  no se va hacer nada de lo que se suele hacer con las mismas:
 	  ni partirlas, ni añadirles nada, ni quitarles nada. Unas
@@ -273,6 +273,23 @@ puts precio_de<span class="hl sym">.</span>to_s</code>
 que al ejecutarse, por usar <code>to_s</code> para convertir a una
 	  cadena la matriz asociativa en vez del inspect anterior no
 se ve nada, pero es otra forma de hacer las cosas.</p>
+
+<p>Ruby, aparte de tener tipificación dinámica, también tiene
+  tipificación fuerte. Es decir, una vez que se ha establecido el tipo
+  de una variable sólo se pueden hacer las operaciones que permita la
+  clase. </p>
+  <code class='ejemplo'>irb(main):015:0><span class='user'> bar='hola k ase'</span>
+=> "hola k ase"
+irb(main):016:0><span class='user'>  bar+3</span>
+TypeError: can't convert Fixnum into String
+	from (irb):16:in `+'
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0><span class='user'>  bar=3</span>
+=> 3
+irb(main):018:0><span class='user'> bar+3 </span>
+=> 6</code>
+
 
 
 <h2><a name="1:es">Entrada y Salida. Y, de camino, bucles. </a> <a href="#1:es" style="font-size:small">#</a></h2>

@@ -1,24 +1,28 @@
 /* 
-Fichero............: AAP.css
-Autor..............: (C) GeNeura Team, 2006
+Fichero............: ruby.css
+Autor..............: (C) GeNeura Team, 2006, 2014
                      Este fichero: J.J. Merelo: jmerelo@geneura.ugr.es
-Fecha..............: 21-Dic-2006
+Fecha..............: Marzo 2014
 Descripcion........: Hoja de estilo para cursos y tutoriales.
-Modificaciones.....:
 */
 
-body { background-color: navajoWhite; }
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
+
+body { background-color: #ebebeb; }
+
 p {
-  color: darkblue;
-  font-family:  Verdana, Helvetica, Arial, sans-serif;
+  color: black;
+  font-family:  Raleway, Helvetica, Arial, sans-serif;
   text-indent: 5%;
   margin-right: 5%;
   margin-left: 5%;
 
 }
 ul {
-  color: darkblue;
-  font-family:  Verdana, Helvetica, Arial, sans-serif;
+  color: black;
+  font-family:  Raleway, Helvetica, Arial, sans-serif;
   margin-right: 5%;
   margin-left: 5%;
 
@@ -26,7 +30,7 @@ ul {
 
 ol {
   background-color: inherit; 
-  font-family:  Verdana, Helvetica, Arial, sans-serif;
+  font-family:  Raleway, Helvetica, Arial, sans-serif;
   margin-right: 5%;
   margin-left: 5%;
 
@@ -35,8 +39,8 @@ ol {
 ul.otro {
   background-color: inherit; 
   font-size:small;
-  color: darkblue;
-  font-family:  Verdana, Helvetica, Arial, sans-serif;
+  color: black;
+  font-family:  Raleway, Helvetica, Arial, sans-serif;
 }
 
 code.ejemplo {
@@ -45,11 +49,11 @@ code.ejemplo {
   display: block;
   padding: 2pt;
   background-color: lightYellow;
-  color: darkBlue;
+  color: black;
   border-style: double;
   border-color: #000080;
   border-width: 2pt;
-  font-family: Courier New, Courier;
+  font-family: Inconsolata,Courier New, Courier;
   text-indent: 0%;
   margin-right: 5%;
   margin-left: 5%;
@@ -93,7 +97,7 @@ p.ejercicios {
   background-color: seashell;
   color: black;
   border-style: solid;
-  border-color: darkblue;
+  border-color: black;
   border-width: 1pt;
   text-indent: 0%;
   margin-right: 20%;
@@ -108,7 +112,7 @@ div.ejemplo {
   background-color: beige;
   color: black;
   border-style: dashed;
-  border-color: darkblue;
+  border-color: black;
   border-width: 1pt;
   text-indent: 2%;
   margin-right: 10%;
@@ -123,7 +127,7 @@ div.ejercicios {
   background-color: seashell;
   color: black;
   border-style: solid;
-  border-color: darkblue;
+  border-color: black;
   border-width: 1pt;
   text-indent: 0%;
   margin-right: 20%;
@@ -154,7 +158,7 @@ div.tabla:before {
 }
 
 div.aclara {
-  background-color: #d0eaef;
+  background-color: white;
   color: black;
   border-style: double;
   border-color: black;
@@ -167,7 +171,7 @@ div.aclara {
 
 div.aclara2 {
   font-size:medium;
-  background-color: #d0eaef;
+  background-color: white;
   color: black;
   border-style: double;
   border-color: black;
@@ -212,15 +216,16 @@ div.objetivos {
   margin: 0 auto;
   padding: 4px;
 }
+
 div.objetivos:before { 
   content: "Objetivos";
   background-color: lightblue;
   font-size: large
 }
 
-h1 {font-size:xx-large; font-family:Arial, Verdana, Helvetica, sans-serif}
-h2 {font-size:x-large; font-family:Arial, Verdana, Helvetica, sans-serif}
-h3 {font-size:large; font-family:Arial, Verdana, Helvetica, sans-serif}
+h1 {font-size:xx-large; font-family:April Fatface, Helvetica, sans-serif}
+h2 {font-size:x-large; font-family:April Fatface, Helvetica, sans-serif}
+h3 {font-size:large; font-family:April Fatface,, Helvetica, sans-serif}
 
 span.user {
   background-color:yellow;
