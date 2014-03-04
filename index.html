@@ -15,8 +15,7 @@
 <a href="https://github.com/JJ/ruby-para-impacientes"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
 
-  <h1>Taller de la <a href="http://osl.ugr.es/">Oficina de Software Libre</a>: 1
-      Ruby para impacientes</h1>
+  <h1>Taller de la <a href="http://osl.ugr.es/">Oficina de Software Libre</a>:  Ruby para impacientes</h1>
 
 
 <div class="objetivos"> <ul>
@@ -36,25 +35,20 @@
       </ul>
 </div>  
 
-<div class="nav"><ul>
-	<li> <a href="http://geneura.ugr.es/%7Ejmerelo/">Página del profesor</a></li>
-      </ul>
-    </div>
 
 <h2><a name="1:t1:intro">¿Ruby? Pero si es muy
   fácil </a> <a href="#1:t1:intro" style="font-size:small">#</a></h2>
 
 
-
-  <p>Si es que os suena, posiblemente conozcáis <a href="http://ruby-lang.org/">Ruby</a>
+  <p>Si es que os suena, posiblemente conozcáis <a href="http://www.ruby-lang.org/">Ruby</a>
   por <a href="http://rubyonrails.org/">Ruby on Rails</a>, un entorno
-  web creado a mediados de esta década que usa Ruby como lenguaje
+  web creado a mediados de la primera década del siglo que usa Ruby como lenguaje
   subyacente; mucha gente llega a Ruby desde la derecha (el On Rails)
   y se piensan que es como un lenguaje de macros que imita a Python o
     a Perl o a ambos... pero no es así.</p>
 
 <p>El lenguaje Ruby lo
-  creó <a href="http://www.ruby-lang.org/en/about/">Matz, Yukihiro
+  creó <a href="https://www.ruby-lang.org/en/about/">Matz, Yukihiro
   Matsumoto</a>, con la intención de que fuera fácil de aprender y se
   pareciera lo más posible a la forma en la que hablan las personas,
   no a cómo las máquinas quieren que hablemos. Y tiene mérito que no
@@ -65,13 +59,14 @@
   anterior, pero no mucho) y Perl con un poco de Lisp y Smalltalk
   espolvoreado para que no falte de nada. </p>
 
-<p>¿Y qué es lo que sale? Pues un lenguaje interpretado, dinámico,
+<p>¿Y qué es lo que sale? Pues un lenguaje interpretado, <a href='http://www.rubyfleebie.com/ruby-is-dynamically-and-strongly-typed/'>de tipado
+    dinámico y fuerte</a>,
   orientado a objeto, reflexivo, que hasta no hace mucho no era
   demasiado rápido pero que últimamente está experimentando un
   incremento de rendimiento considerable. La versión estable actual es
   la 2.1.1, aunque todavía se usan de forma extensa versiones
   anteriores como la 1.9.3. Por supuesto que por lo que más se le sigue conociendo es
-  por Ruby on Rails, pero aplicaciones muy populares como Amarok o <a href="http://sketchup.google.com/">Sketchup</a> usan
+  por Ruby on Rails, pero aplicaciones muy populares como Amarok o <a href="http://sketchup.com/">Sketchup</a> usan
   este lenguaje. Y tú puedes tambien usarlo, si prestas atención y
   haces los ejemplos y actividades de este tutorial, ¿por qué no?</p>
 
@@ -241,7 +236,7 @@ resto es más o menos igual. Por ejemplo, las matrices:
 puts matriz<span class="hl sym">.</span>join <span class="hl sym">&lt;&lt;</span> <span class="hl str">" "</span> <span class="hl sym">&lt;&lt;</span> matriz<span class="hl sym">.</span><span class="hl kwd">join</span><span class="hl sym">(</span><span class="hl str">"-"</span><span class="hl sym">)</span>
 </code>
 Como ocurre en otros lenguajes dinámicos como el Ruby, no hay
-distinción de tipos: una matriz puede contener números enteros,
+distinción de tipos, o mejor dicho, hay tipificación dinámica: una matriz puede contener números enteros,
 cadenas e incluso otras matrices, y desde su creación son objetos de
 pleno derecho, pudiéndosele aplicar métodos como <code>join</code> que
 une todos los elementos de la matriz, con o sin algún carácter de por
@@ -264,7 +259,7 @@ puts sonido_de<span class="hl sym">.</span>inspect
 <p>Que, aparte de introducir las llaves (para claves... ¿lo ves como se
 	  trata de no sorprender?) pone unos dos puntitos delante de
 	  las mismas que la verdad que sí sorprenden. Y es porque se
-	  trata de cadens un poco especiales, denominadas
+	  trata de cadenas un poco especiales, denominadas
 	  <em>símbolos</em>. Los símbolos en Ruby son como cadenas con las que
 	  no se va hacer nada de lo que se suele hacer con las mismas:
 	  ni partirlas, ni añadirles nada, ni quitarles nada. Unas
@@ -280,6 +275,23 @@ puts precio_de<span class="hl sym">.</span>to_s</code>
 que al ejecutarse, por usar <code>to_s</code> para convertir a una
 	  cadena la matriz asociativa en vez del inspect anterior no
 se ve nada, pero es otra forma de hacer las cosas.</p>
+
+<p>Ruby, aparte de tener tipificación dinámica, también tiene
+  tipificación fuerte. Es decir, una vez que se ha establecido el tipo
+  de una variable sólo se pueden hacer las operaciones que permita la
+  clase. </p>
+  <code class='ejemplo'>irb(main):015:0><span class='user'> bar='hola k ase'</span>
+=> "hola k ase"
+irb(main):016:0><span class='user'>  bar+3</span>
+TypeError: can't convert Fixnum into String
+	from (irb):16:in `+'
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0><span class='user'>  bar=3</span>
+=> 3
+irb(main):018:0><span class='user'> bar+3 </span>
+=> 6</code>
+
 
 
 <h2><a name="1:es">Entrada y Salida. Y, de camino, bucles. </a> <a href="#1:es" style="font-size:small">#</a></h2>
@@ -336,7 +348,7 @@ Juan, Gómez Gómez</pre>
   relacionadas con la red: web , FTP, y todas esas cosas; dentro de
   esa jerarquía, los descendientes se separan con <code>::</code>,
   igual que en
-  Perl. <a href="http://augustl.heroku.com/blog/ruby-net-http-cheat-sheet">Net::HTTP</a>
+  Perl. <a href="http://augustl.com/blog/2010/ruby_net_http_cheat_sheet/">Net::HTTP</a>
   serviría para leer cosas de la web. Pero no forma parte del núcleo o
   <em>core</em>, así que tendremos que importarla explícitamente con
   require:
@@ -477,21 +489,18 @@ misma. De camino, vemos como se definen funciones en ruby: usando
 también <code>def</code>. Igual que antes, salvo que ahora damos un nombre al
 bloque, lo que le da más derechos, al parecer.</p>
 
-<h2><a name="1:cpan">5 Instalando nuevos módulos </a> <a href="#1:cpan" style="font-size:small">#</a></h2>
+<h2><a name="1:cpan">Instalando nuevos módulos </a> <a href="#1:cpan" style="font-size:small">#</a></h2>
 
 
 
 <p>Qué sería de cualquier lenguaje si tuviéramos que conformarnos con
   lo que nos da, y no pudiéramos instalar cosas nuevas... comenzó
   LaTeX con CTAN, luego siguió Perl con CPAN, y Ruby tiene su
-  colección de gemas para poder bajártelas cómodamente. Sin embargo,
-  hace falta instalar cosas para usarlo, no se puede usar
-  directamente. En ubuntu habrá que instalar el paquete <code>rubygems</code>, y
-  en otras distros hacer cosas más complicadas (o no). La manera más
-  general es <a href="http://docs.rubygems.org/read/chapter/3">bajarse
-    el paquete de Rubyforge e instalarlo</a>, tampoco es demasiado
-  complicado. Afortunadamente, a partir de la versión 1.9 (que todavía
-  no viene por defecto en las distros) vendrá incluida.</p>
+  colección de gemas para poder bajártelas cómodamente. En la mayor
+  parte de las distribuciones incluidas hoy en día, o en cualquier
+  caso a partir de la 1.9, es parte del mismo paquete que Ruby, así
+  que no hace falta descargárselo aparte. Si no es el caso, lo mejor
+  es usar el entorno RVM como se ha explicado anteriormente.</p>
 
 <p>Aparte de gem, hay que instalarse alguna cosa más, porque muchos
   módulos en ruby necesitan herramientas de construcción
@@ -600,14 +609,14 @@ osl<span class="hl sym">.</span><span class="hl kwd">search</span><span class="h
     es <a href="http://mislav.uniqpath.com/poignant-guide/">la guía
       intensa de Why's a Ruby</a>, con cómics, vericuetos inefables,
     pero que finalmente termina enseñando bastante. También tienes
-    este <a href="http://www.ruby-lang.org/en/documentation/quickstart/">tutorial
+    este <a href="https://www.ruby-lang.org/en/documentation/quickstart/">tutorial
       en 20 minutos</a>, y los libros que te aparecen a ambos lados
     de este texto.</p>
 <iframe src="index_files/cm_002.html" style="width:120px;height:240px;float:right" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>
 
 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 =======
-<p>Como seguramente conoces otro lenguaje de programación, prueba <a href="http://www.ruby-lang.org/es/documentation/ruby-from-other-languages/">Ruby
+<p>Como seguramente conoces otro lenguaje de programación, prueba <a href="https://www.ruby-lang.org/es/documentation/ruby-from-other-languages/">Ruby
 	desde otros lenguajes</a>, con tutoriales en inglés y español
       que explican cómo trabajar  con Ruby si se conoce Perl, o Java,
 	o Python.</p>
