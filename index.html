@@ -282,7 +282,7 @@ como, imagino, era de esperar. </p>
   aquellas que usan una clave para acceder a cada uno de los elementos
   (en vez de hacerlo en secuencia), sumamente útiles para evitar la
   distribución de la información de una estructura de datos por
-  múltiples matrices y su acceso fácil usando una clave</p>
+  múltiples matrices y su <a href='code/sonido.rb'>acceso fácil usando una clave</a></p>
 <code class="ejemplo">sonido_de <span class="hl sym">= { :</span>vaca <span class="hl sym">=&gt;</span> <span class="hl str">'muuu'</span><span class="hl sym">,</span>
 	  <span class="hl sym">:</span>buho <span class="hl sym">=&gt;</span> <span class="hl str">'uuu'</span><span class="hl sym">,</span>
 	  <span class="hl sym">:</span>caballo <span class="hl sym">=&gt;</span> <span class="hl str">'iiiii'</span> <span class="hl sym">}</span>
@@ -291,16 +291,17 @@ puts sonido_de<span class="hl sym">.</span>inspect
 
 <p>Que, aparte de introducir las llaves (para claves... ¿lo ves como se
 	  trata de no sorprender?) pone unos dos puntitos delante de
-	  las mismas que la verdad que sí sorprenden. Y es porque se
+	  las mismas que la verdad es que sí sorprenden. Y es porque se
 	  trata de cadenas un poco especiales, denominadas
 	  <em>símbolos</em>. Los símbolos en Ruby son como cadenas con las que
 	  no se va hacer nada de lo que se suele hacer con las mismas:
 	  ni partirlas, ni añadirles nada, ni quitarles nada. Unas
 	  cadenas constantes, más o menos, que no es otra cosa lo que
-necesitamos en una variable asociativa,
+necesitamos en una variable asociativa (porque las claves, una vez
+	  establecidas, no se cambian, si acaso se añaden claves nuevas),
 	  denominada <a href="http://ruby-doc.org/core/classes/Hash.html">Hash</a>
-	  en Ruby. Por supuesto, se puede usar una cadena normal y
-	  corriente como clave:
+	  en Ruby. Por supuesto, se puede usar una cadena <a href='code/asociativa-normal.rb'>normal y
+	    corriente como clave</a>:
 <code class="ejemplo">precio_de <span class="hl sym">= {</span> <span class="hl str">"pipas"</span> <span class="hl sym">=&gt;</span> <span class="hl str">'bajo'</span><span class="hl sym">,</span>
 	  <span class="hl str">"coche"</span> <span class="hl sym">=&gt;</span> <span class="hl str">'depende'</span><span class="hl sym">,</span>
 	  <span class="hl str">"plan E"</span> <span class="hl sym">=&gt;</span> <span class="hl str">'exagerado'</span> <span class="hl sym">}</span>
@@ -336,19 +337,18 @@ irb(main):018:0><span class='user'> bar+3 </span>
 <h2><a name="1:es">Entrada y Salida. Y, de camino, bucles. </a> <a href="#1:es" style="font-size:small">#</a></h2>
 
 
-
 <p>Tratándose de un lenguaje orientado a objetos, habrá que buscar la
-  clase para abrir y cerrar ficheros, que se llama en un alarde de
-  originalidad <code>File</code>.
+  clase para abrir y cerrar ficheros, que <a href='code/fichero.rb'>se llama en un alarde de
+    originalidad <code>File</code> (recordemos, mínima sorpresa)</a>.
 <code class="ejemplo">fh <span class="hl sym">=</span> File<span class="hl sym">::</span><span class="hl kwd">new</span><span class="hl sym">(</span> <span class="hl kwc">ARGV</span><span class="hl sym">[</span><span class="hl num">0</span><span class="hl sym">] )</span>
 <span class="hl kwa">while</span> <span class="hl sym">(</span>line <span class="hl sym">=</span> fh<span class="hl sym">.</span>gets <span class="hl sym">)</span>
       nombre<span class="hl sym">,</span> apellidos  <span class="hl sym">=</span> line<span class="hl sym">.</span><span class="hl kwd">split</span><span class="hl sym">(</span><span class="hl str">','</span><span class="hl sym">)</span>
       puts <span class="hl str">"* Nombre #{nombre}</span><span class="hl esc">\n\t</span><span class="hl str">apellidos #{apellidos}"</span>
 <span class="hl kwa">end</span></code>
 En este caso, tampoco es sorprendente la matriz que se usa para
-acceder a la línea de comandos: ARGV, igual que en C (pero en
+acceder a la línea de comandos: <code>ARGV</code>, igual que en C (pero en
 mayúsculas) o en Perl (pero sin dólares). Ya puestos, introducimos
-también una esctructura de control: el bucle <code>while</code> que
+también una estructura de control: el bucle <code>while</code> que
 va leyendo línea a línea con <code>gets</code> (lo contrario
 que <code>puts</code>, que es para escribir). El cuerpo del bucle no
 usa llaves, sólo la indentación y la palabra <code>end</code> para indicar el
@@ -389,8 +389,8 @@ Juan, Gómez Gómez</pre>
   igual que en
   Perl. <a href="http://augustl.com/blog/2010/ruby_net_http_cheat_sheet/">Net::HTTP</a>
   serviría para leer cosas de la web. Pero no forma parte del núcleo o
-  <em>core</em>, así que tendremos que importarla explícitamente con
-  require:
+  <em>core</em>, así que tendremos que <a href='code/trayendo.rb'>importarla explícitamente con
+    <code>require</code></a>:
 <code class="ejemplo"><span class="hl kwa">require</span> <span class="hl str">'net/http'</span>
 
 Net<span class="hl sym">::</span>HTTP<span class="hl sym">.</span>get_print  <span class="hl str">'osl.ugr.es'</span><span class="hl sym">,</span> <span class="hl str">'/'</span>
@@ -399,24 +399,13 @@ En <code>require</code> cambia un poco la sintaxis: se separan las partes de la
 librería con <code>/</code> y se pone todo en minúsculas. <code>require</code>
 importa el código, pero no los identificadores; por eso para usar
 alguna función del módulo hay que decir todo el nombre de la misma:
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-nombre de la clase <code> nombre_del_método. <code>get_print</code> es un método
-=======
 nombre de la clase <code> nombre_del_método</code>. <code>get_print</code> es un método
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
   de clase, y recibe como argumentos el nombre del servidor (el HTTP
   va de soi) y la dirección dentro de ese servidor, en este caso el
   directorio raíz. Al ejecutarlo nos dará de resultado un mogollón de
   texto, todo lo que haya en la página. De camino, conviene fijarse
   que aquí nos hemos ahorrado unos cuantos paréntesis, lo que,
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-  sinceramente, me ha sorprendido.</code>
-
-</p><p>Juntando todo lo anterior, y añadiendo alguna cosilla más de
-  nuestra cosecha, podemos bajarnos una página web y
-  meterlo en un fichero</p>
-=======
-sinceramente, me ha sorprendido.<p></p>
+  sinceramente, me ha sorprendido.</p>
 
 <p>Juntando todo lo anterior, y añadiendo alguna cosilla más de
   nuestra cosecha, podemos bajarnos una página web y
