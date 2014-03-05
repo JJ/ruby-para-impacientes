@@ -66,15 +66,28 @@
   anteriores como la 1.9.3. Por supuesto que por lo que más se le sigue conociendo es
   por Ruby on Rails, pero aplicaciones muy populares como Amarok o <a href="http://sketchup.com/">Sketchup</a> usan
   este lenguaje. Y tú puedes tambien usarlo, si prestas atención y
-  haces los ejemplos y actividades de este tutorial, ¿por qué no?</p>
+  ejecutas los ejemplos de este tutorial, ¿por qué no?</p>
 
+<p>Si bien es cierto que los puestos de trabajo de Ruby tiene menos
+  demanda que los de otros lenguajes como Python, Perl o Javascript,
+  también es cierto que hay una gran demanda de programadores senior
+  de Ruby, sobre todo Ruby on Rails y que en
+  el <a href='http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html'>ránking
+  TIOBE</a> está en el Top 20 de forma más o menos consistente y es el
+  <a href='http://redmonk.com/sogrady/2014/01/22/language-rankings-1-14/'>7º
+    más popular según RedMonk</a> (que mide proyectos nuevos en GitHub
+    y preguntas en StackOverflow), justo por debajo del C++. Y que
+  tiene una popularidad creciente en el área de <em>devops</em>, es
+  decir, del área de sistemas para apoyar al desarrollo. En todo caso,
+    <a href='http://kakubei.blogspot.com.es/2013/04/reasons-to-learn-ruby.html'>hay
+      muchas razones</a>, incluyendo que
+  es un lenguaje más a conocer para añadir a una panoplia de herramientas.</p> 
 
-<h2><a name="1:primer">Primer programa </a> <a href="#1:primer" style="font-size:small">#</a></h2>
+<h2><a name="2:instala">Instalando Ruby </a> <a href="#2:instala" style="font-size:small">#</a></h2>
 
-
-<div class="aclara"><p>Desde Ubuntu, Guadalinex o
+<p>Desde Ubuntu, Guadalinex o
     Debian, haz</p>
- <code>sudo apt-get install ruby irb rubygems  rdoc</code>.
+ <code>sudo apt-get install ruby irb rubygems rdoc</code>.
 
 <p>También puedes instalar
   el <a href='https://www.ruby-lang.org/es/downloads/'>Ruby Version
@@ -96,26 +109,23 @@ y que se instala directamente como una aplicación de usuario. Trabajar
   están). En <a href='https://rvm.io/rvm/install'>esta página da
     diferentes opciones para instalar RVM con/sin Rails y otra serie
     de opcioens</a>.</p>
-</div>
 
-<p>Para programar en Ruby necesitas el editor y el Ruby propiamente
-  dicho. Descárgatelo e instálalo, aunque te vendrá bien también
-  bajarte <code>irb</code>, un intérprete interactivo que te permitirá
-  probar cosas sobre la marcha. Servidor usa Emacs como editor, pero
-  cualquier otra cosa también servirá, incluso Notepad. Ahora, si
-  quieres ir un poco más allá, te puedes
-  descargar <a href="http://www.ibm.com/developerworks/opensource/library/os-rubyeclipse/">
-    un plugin para Eclipse</a> o
-  el <a href="http://homepage2.nifty.com/sakazuki/rde_en/">RDE, sólo
-    para Windows</a>. </p>
+  <p>Para usar <a href='https://www.digitalocean.com/community/articles/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm'>directamente en el intérprete donde estás RVM</a>, un par de comandos más</p>:
+  <code class='ejemplo'>bash$ source ~/.rvm/scripts/rvm
+rvm requirements</code>
+  <p>Y, por supuesto, </p>
+  <code class='ejemplo>rvm install ruby</code>
+  <p>para instalar la última versión del intérprete de Ruby, y posteriormente</p>
+  <code class='ejemplo'>rvm use ruby --default</code>
+<p>para usarlo.  Casi todos los manuales hoy en día aconsejan trabajar con RVM en vez de la versión que viene con la distribución.</p>
 
-<p>Ruby es un intérprete, así que no se "ejecuta" desde el menú. El
-  ciclo es el habitual en programas para lenguajes interpretados: se
-  escribe y se guarda el programa, nos vamos al directorio donde lo
-  hemos guardado, si estamos en Linux/Unix lo hacemos ejecutable
-  con <code>chmod +x</code>, y lo ejecutamos. Pero todavía no podemos
-  ejecutar nada, porque no hemos visto ningún programa, así que vamos
-  con el primero.</p>
+  <p>También hay otra forma de trabajar con entornos
+  virtuales: <a href='http://gorails.com/setup/ubuntu/13.10'><code>rbenv</code></a>. Los
+  pasos seguidos son similares: se instala el entorno, se descarga y
+    construye el intérprete, y posteriormente se selecciona el que
+    deseemos. En vez de <code>curl</code>, <code>rbenv</code>
+  usa <code>git</code> para descargarse (cuyo uso también aconsejamos
+  vivamente). </p>
 
 <p>En cuanto al intérprete de Ruby que se puede instalar, hay muchas
   opciones; hay varias implementaciones de Ruby, aunque la más
@@ -128,7 +138,31 @@ y que se instala directamente como una aplicación de usuario. Trabajar
   tu ordenador puede que tengas una u otra, aunque también te puedes
   instalar <a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29#Implementations">cualquier
     otra</a>.  Aconsejamos que se use la oficial para la distribución
-  o bien, como se ha hecho arriba, se instale RVM</p>
+  o bien, como se ha hecho arriba, se instale <code>rbenv</code>
+  o <code>rvm</code>. </p>
+
+<h2><a name="1:primer">Primer programa </a> <a href="#1:primer" style="font-size:small">#</a></h2>
+
+
+<p>Para programar en Ruby necesitas el editor y el intérprete de Ruby propiamente
+  dicho. Descárgatelo e instálalo, aunque te vendrá bien también
+  bajarte <code>irb</code>, un intérprete interactivo que te permitirá
+  probar cosas sobre la marcha (viene incluido con los entornos virtuales). Servidor usa Emacs como editor, pero
+  cualquier otra cosa también servirá, incluso Notepad. Ahora, si
+  quieres ir un poco más allá, te puedes
+  descargar <a href="http://www.ibm.com/developerworks/opensource/library/os-rubyeclipse/">
+    un plugin para Eclipse</a> o
+  el <a href="http://homepage2.nifty.com/sakazuki/rde_en/">RDE, sólo
+    para Windows</a>. </p>
+
+<p>Ruby es un intérprete, así que no se "ejecuta" desde el menú. El
+  ciclo es el habitual en programas para lenguajes interpretados: se
+  escribe y se guarda el programa, nos vamos al directorio donde lo
+  hemos guardado, si estamos en Linux (o algún otro sabor de Unix como
+  el Mac) lo hacemos ejecutable
+  con <code>chmod +x</code>, y lo ejecutamos. Pero todavía no podemos
+  ejecutar nada, porque no hemos visto ningún programa, así que vamos
+  con el primero.</p>
 
 <code class="ejemplo"><span class="hl slc">#!/usr/bin/ruby</span>
 puts <span class="hl str">"Esto es jauja"</span></code>
@@ -152,7 +186,6 @@ puts <span class="hl str">"Esto es jauja"</span></code>
     aparecerá será la instalación que se haya hecho. En todo caso,
   esta segunda forma es más aconsejable porque es independiente del
   lugar donde esté instalado Ruby, basta con que esté en el camino de ejecución</p>
-
 
   <p>La siguiente línea no vacía ya sí está escrita en el lenguaje Ruby (aunque
   usa la misma orden que C, <code>put
@@ -229,12 +262,14 @@ antes. </p>
 lógica; Ruby trabaja bajo el principio de la mínima sorpresa (lo que
 muchas veces provoca sorpresa viniendo de otros lenguajes), o más bien
 de la máxima coherencia: una vez aprendida parte del lenguaje, el
-resto es más o menos igual. Por ejemplo, las matrices:
+  resto es más o menos igual. Por ejemplo, <a href='code/matriz.rb'>las matrices</a>:
 <code class="ejemplo">matriz <span class="hl sym">= [</span><span class="hl str">'esto'</span><span class="hl sym">,</span><span class="hl str">'es'</span><span class="hl sym">,</span><span class="hl num">1</span><span class="hl sym">,</span><span class="hl str">'matriz'</span><span class="hl sym">]</span>
 puts matriz<span class="hl sym">.</span>join <span class="hl sym">&lt;&lt;</span> <span class="hl str">" "</span> <span class="hl sym">&lt;&lt;</span> matriz<span class="hl sym">.</span><span class="hl kwd">join</span><span class="hl sym">(</span><span class="hl str">"-"</span><span class="hl sym">)</span>
 </code>
-Como ocurre en otros lenguajes dinámicos como el Ruby, no hay
-distinción de tipos, o mejor dicho, hay tipificación dinámica: una matriz puede contener números enteros,
+Como ocurre en
+otros <a href='http://stackoverflow.com/questions/125367/dynamic-type-languages-versus-static-type-languages'>lenguajes
+  de tipificado dinámicos como el Perl</a> cada elemento de una matriz
+puede tener un tipo diferente: una matriz puede contener números enteros,
 cadenas e incluso otras matrices, y desde su creación son objetos de
 pleno derecho, pudiéndosele aplicar métodos como <code>join</code> que
 une todos los elementos de la matriz, con o sin algún carácter de por
