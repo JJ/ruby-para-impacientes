@@ -286,13 +286,19 @@ irb(main):016:0><span class='user'>  bar+3</span>
 TypeError: can't convert Fixnum into String
 	from (irb):16:in `+'
 	from (irb):16
-	from /usr/bin/irb:12:in `<main>'
+	from /usr/bin/irb:12:in `&lt;main>'
 irb(main):017:0><span class='user'>  bar=3</span>
 => 3
 irb(main):018:0><span class='user'> bar+3 </span>
 => 6</code>
 
-
+  <p>En el ejemplo anterior primero definimos <code>bar</code> como
+    una cadena, lo que fija su tipo a <code>String</code>, por lo que
+    no podemos usar la operación de suma y obtenemos el error que se
+    indica (no se puede convertir <code>Fixnum</code>
+    en  <code>String</code>). Sin embargo, usamos la misma variable
+    para asignarle un número y dinámicamente se le asigna ese tipo o
+    clase, por lo que ya podemos usarlo para esa operación</p>
 
 <h2><a name="1:es">Entrada y Salida. Y, de camino, bucles. </a> <a href="#1:es" style="font-size:small">#</a></h2>
 
