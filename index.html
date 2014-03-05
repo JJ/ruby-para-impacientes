@@ -436,7 +436,7 @@ fname <span class="hl sym">=</span> url <span class="hl sym">+</span> <span clas
   escritura. Como se ve, no hace falta cerrarlo. Pa qué, si ya sabe
   hacerlo el ordenador. </p>
 
-<h2><a name="1:bloques">4 Bloques </a> <a href="#1:bloques" style="font-size:small">#</a></h2>
+<h2><a name="1:bloques">Bloques </a> <a href="#1:bloques" style="font-size:small">#</a></h2>
 
 <p>Después de las variables uno de los conceptos importantes en Ruby
   son los bloques. Un bloque es una secuencia de código que define un ámbito léxico, es decir que puede tener sus
@@ -553,12 +553,9 @@ Successfully installed ruby-mysql-2.9.2
 1 gem installed
 Installing ri documentation for ruby-mysql-2.9.2...
 Installing RDoc documentation for ruby-mysql-2.9.2...
-Could not find main page README
-Could not find main page README
-Could not find main page README
-Could not find main page README
+[...]
 </code>
-<p>En algunos casos puede que dé error, porque falte alguna
+<p>En algunos módulos puede que dé error, porque falte alguna
   dependencia que haya que instalar desde el sistema operativo; en ese
   caso, es conveniente instalar el paquete correspondiente, en vez de
   hacerlo desde <code>gem</code>. Si no es la ultimísima versión luego se puede
@@ -572,14 +569,13 @@ Could not find main page README
 <h2><a name="1:hpricot">6 Rascando HTML: hpricot </a> <a href="#1:hpricot" style="font-size:small">#</a></h2>
 
 
-
 <p>Hay verdaderas virguerías entre los paquetes gem, pero uno de los
   más útiles para los que nos dedicamos
   a <acronym name="scraping">rascar HTML</acronym>
   es <a rhef="http://hpricot.com/">hpricot</a>, un analizador
   <em>liberal</em> de HTML que permite extraer información de las páginas
   muy fácilmente. Lo instalamos con gem (<code>sudo gem install
-    hpricot</code>) y podemos empezar a usarlo</p>
+    hpricot</code>) y podemos <a href='code/osl-titulares.rb'>empezar a usarlo</a></p>
 <code class="ejemplo"><span class="hl kwa">require</span> <span class="hl str">'rubygems'</span>
 <span class="hl kwa">require</span> <span class="hl str">'hpricot'</span>
 <span class="hl kwa">require</span> <span class="hl str">'open-uri'</span>
