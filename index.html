@@ -410,7 +410,6 @@ nombre de la clase <code> nombre_del_método</code>. <code>get_print</code> es u
 <p>Juntando todo lo anterior, y añadiendo alguna cosilla más de
   nuestra cosecha, podemos bajarnos una página web y
   meterla en un fichero</p>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
 <code class="ejemplo"><span class="hl kwa">require</span> <span class="hl str">'net/http'</span>
 
 url <span class="hl sym">=</span> <span class="hl kwc">ARGV</span><span class="hl sym">[</span><span class="hl num">0</span><span class="hl sym">]</span>
@@ -425,13 +424,9 @@ fname <span class="hl sym">=</span> url <span class="hl sym">+</span> <span clas
 </code>
 <p>Nuestra cosecha incluye una interrogación y un <code>if</code>, que no
   habíamos visto antes. La interrogación se pone en los métodos que
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-  devuelven un valor lógico, verdadero o falso. En este caso, si se
-=======
   devuelven un valor lógico, verdadero o falso (valores que tienen un
   tratamiento diferente en Ruby y en otros lenguajes: un valor lógico
   es un valor lógico, no un 0 o una cadena nula). En este caso, si se
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
   trata o no de un fichero sobre el que tengamos derechos de escritura
   (en lo que, al parecer, es un poco peculiar este Ruby). El bloque
   <code>if</code> termina en <code>end</code>, como antes el bucle. Además, hemos usado "w"
@@ -441,16 +436,10 @@ fname <span class="hl sym">=</span> url <span class="hl sym">+</span> <span clas
 
 <h2><a name="1:bloques">4 Bloques </a> <a href="#1:bloques" style="font-size:small">#</a></h2>
 
-
-
 <p>Después de las variables uno de los conceptos importantes en Ruby
   son los bloques. Un bloque es una secuencia de código con sus
   propias variables, y en Ruby se denota por
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-  llaves <code>{}</code> o por <code>def</code> - <code>done</code>. Se usa, por ejemplo, para un bucles tales como los siguientes.</p>
-=======
   llaves <code>{}</code> o por <code>do</code> - <code>done</code>. Se usa, por ejemplo, para bucles tales como los siguientes.<p></p>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
 <code class="ejemplo">host <span class="hl sym">=</span> <span class="hl kwc">ARGV</span><span class="hl sym">[</span><span class="hl num">0</span><span class="hl sym">]</span>
 partes <span class="hl sym">=</span> host<span class="hl sym">.</span><span class="hl kwd">split</span><span class="hl sym">(</span><span class="hl str">"."</span><span class="hl sym">)</span>
 partes<span class="hl sym">.</span>each <span class="hl kwa">do</span> <span class="hl sym">|</span>p<span class="hl sym">|</span>
@@ -479,11 +468,7 @@ y sería exactamente lo mismo (salvo la precedencia, pero eso no nos importa aho
 <p>Lo que ocurre con los bloques en Ruby es que tienen entidad
   propia. Son como funciones anónimas, y de hecho se pueden usar como
   tales; además, como todo en Ruby, son objetos, o sea que podemos
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-  crearlos y pasarlos por ahi como queramos. 
-=======
   crearlos y pasarlos por ahí como queramos. 
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
 <code class="ejemplo">prefijos <span class="hl sym">= %</span><span class="hl kwd">w</span><span class="hl sym">(</span> pre post ante <span class="hl kwa">super</span> macro mega<span class="hl sym">)</span>
 prefijadores <span class="hl sym">=</span> Hash<span class="hl sym">.</span>new
 prefijos<span class="hl sym">.</span>each <span class="hl sym">{ |</span>p<span class="hl sym">|</span>
@@ -518,8 +503,6 @@ también <code>def</code>. Igual que antes, salvo que ahora damos un nombre al
 bloque, lo que le da más derechos, al parecer.</p>
 
 <h2><a name="1:cpan">Instalando nuevos módulos </a> <a href="#1:cpan" style="font-size:small">#</a></h2>
-
-
 
 <p>Qué sería de cualquier lenguaje si tuviéramos que conformarnos con
   lo que nos da, y no pudiéramos instalar cosas nuevas... comenzó
@@ -613,10 +596,6 @@ osl<span class="hl sym">.</span><span class="hl kwd">search</span><span class="h
   caso los enlaces y títulos de los titulares del blog de
   la <a href="http://osl.ugr.es/">OSL</a>. Por ejemplo, en este caso
   le estamos diciendo que extraiga los elementos <code>h2</code> que, además,
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-  tengan como atributo <code>class</code> <code>entry-title</code> </p>
-
-=======
   tengan como atributo <code>class</code> <code>entry-title</code>; y lo estamos
       haciendo pasándole un bloque con las cosas que tiene que hacer
       cada vez que se encuentre con un elemento que cumpla esa
@@ -625,7 +604,6 @@ osl<span class="hl sym">.</span><span class="hl kwd">search</span><span class="h
 <p>Por cierto, no es la única forma de hacer <em>scraping</em> con
       Ruby: se <a href="http://muharem.wordpress.com/2007/09/04/scrape-the-web-with-ruby/">puede
       usar también WWW::Mechanize</a>, una versión de la librería en Perl.</p>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3bd00d4f0b77bb8b520e874d7ea3febf1d4bf23b
 
 <h2><a name="1:t1:biblio">7 Bibliografía </a> <a href="#1:t1:biblio" style="font-size:small">#</a></h2>
 
@@ -642,8 +620,6 @@ osl<span class="hl sym">.</span><span class="hl kwd">search</span><span class="h
     de este texto.</p>
 <iframe src="index_files/cm_002.html" style="width:120px;height:240px;float:right" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe>
 
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-=======
 <p>Como seguramente conoces otro lenguaje de programación, prueba <a href="https://www.ruby-lang.org/es/documentation/ruby-from-other-languages/">Ruby
 	desde otros lenguajes</a>, con tutoriales en inglés y español
       que explican cómo trabajar  con Ruby si se conoce Perl, o Java,
@@ -678,9 +654,5 @@ osl<span class="hl sym">.</span><span class="hl kwd">search</span><span class="h
     
     <address><a href="mailto:jj%20%28at%29%20merelo.net">Juan J. Merelo</a></address>
   
-
-
-
-
 
 </body></html>
