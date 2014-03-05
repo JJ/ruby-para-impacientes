@@ -410,8 +410,8 @@ nombre de la clase <code> nombre_del_método</code>. <code>get_print</code> es u
   sinceramente, me ha sorprendido.</p>
 
 <p>Juntando todo lo anterior, y añadiendo alguna cosilla más de
-  nuestra cosecha, podemos bajarnos una página web y
-  meterla en un fichero</p>
+  nuestra cosecha, podemos <a href='code/curl.rb'>bajarnos una página web y
+    meterla en un fichero</a></p>
 <code class="ejemplo"><span class="hl kwa">require</span> <span class="hl str">'net/http'</span>
 
 url <span class="hl sym">=</span> <span class="hl kwc">ARGV</span><span class="hl sym">[</span><span class="hl num">0</span><span class="hl sym">]</span>
@@ -439,7 +439,7 @@ fname <span class="hl sym">=</span> url <span class="hl sym">+</span> <span clas
 <h2><a name="1:bloques">4 Bloques </a> <a href="#1:bloques" style="font-size:small">#</a></h2>
 
 <p>Después de las variables uno de los conceptos importantes en Ruby
-  son los bloques. Un bloque es una secuencia de código con sus
+  son los bloques. Un bloque es una secuencia de código que define un ámbito léxico, es decir que puede tener sus
   propias variables, y en Ruby se denota por
   llaves <code>{}</code> o por <code>do</code> - <code>done</code>. Se usa, por ejemplo, para bucles tales como los siguientes.<p></p>
 <code class="ejemplo">host <span class="hl sym">=</span> <span class="hl kwc">ARGV</span><span class="hl sym">[</span><span class="hl num">0</span><span class="hl sym">]</span>
@@ -448,7 +448,7 @@ partes<span class="hl sym">.</span>each <span class="hl kwa">do</span> <span cla
   puts <span class="hl str">"* #{p}"</span>
 <span class="hl kwa">end</span>
 </code>
-<p>En este mini-programa le pasamos un nombre de servidor en internet 
+  <p>En <a href='code/host.rb'>este mini-programa</a> le pasamos un nombre de servidor en internet 
 (del tipo subdominio.dominio.tld) y nos da cada una de sus partes, que 
 se guardan precisamente en una variable que se llama así. Pero el truco 
 está en la tercera línea: <code>partes.each</code> es una función que recibe un bloque como argumento. También lo podríamos expresar de la forma siguiente:
@@ -521,8 +521,8 @@ bloque, lo que le da más derechos, al parecer.</p>
   Ruby que tengamos instalado. Por ejemplo, en Ubuntu habría que
   escribir 
   <code class="ejemplo">sudo apt-get install ruby1.8-dev</code>
-No siempre es necesario, pero si te da un error algún módulo típico,
-  posiblemente sea por eso.</p>
+(o algo similar, dependiendo de la versión de Ubuntu que tengamos instalada). No siempre es necesario, pero si te da un error algún módulo típico,
+  posiblemente sea por eso; si tenemos alguno de los entornos virtuales también es posible que haya que realizar alguna instalación adicional para los módulos.</p>
 
 <p>Una vez instalado todo eso, no hay más que usarlo. Empezamos por
   buscar algo que queramos instalar:</p>

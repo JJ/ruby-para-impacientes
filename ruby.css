@@ -43,6 +43,15 @@ ul.otro {
   font-family:  Raleway, Helvetica, Arial, sans-serif;
 }
 
+code {
+  font-size:1.1em;
+  white-space:pre;	
+  display: block;
+  font-family: Inconsolata;
+  background-color: black;
+  color: green;
+}
+
 code.ejemplo {
   font-size:medium;
   white-space:pre;	
