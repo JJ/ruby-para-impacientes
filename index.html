@@ -39,7 +39,7 @@
 <h2><a name="1:t1:intro">¿Ruby? Pero si es muy fácil </a> <a href="#1:t1:intro" style="font-size:small">#</a></h2>
 
 
-<p>Si es que os suena, posiblemente conozcáis <a href="http://www.ruby-lang.org/">Ruby</a>
+<p>Si es que os suena, posiblemente conozcáis <a href="https://www.ruby-lang.org/">Ruby</a>
   por <a href="http://rubyonrails.org/">Ruby on Rails</a>, un entorno
   web creado a mediados de la primera década del siglo que usa Ruby como lenguaje
   subyacente; mucha gente llega a Ruby desde la derecha (el On Rails)
@@ -51,21 +51,21 @@
   Matsumoto</a>, con la intención de que fuera fácil de aprender y se
   pareciera lo más posible a la forma en la que hablan las personas,
   no a cómo las máquinas quieren que hablemos. Y tiene mérito que no
-  le haya salido mal del todo, porque las últimas dos veces que
+  le haya salido un completo desastre, porque las últimas dos veces que
   dijeron eso salió el <a href="http://es.wikipedia.org/wiki/COBOL">COBOL</a> y el <a href="http://es.wikipedia.org/wiki/SQL">SQL</a>. Por otro lado, el nombre Ruby
   puede ser un juego de palabras con las perlas de Perl, o quizás
   no. El propio autor dice que es una mezcla de Python (que es
   anterior, pero no mucho) y Perl con un poco de Lisp y Smalltalk
   espolvoreado para que no falte de nada. </p>
 
-<p>¿Y qué es lo que sale? Pues un lenguaje interpretado, <a href='http://www.rubyfleebie.com/ruby-is-dynamically-and-strongly-typed/'>de tipado
+<p>¿Y qué es lo que sale de esa mezcla? Pues un lenguaje interpretado, <a href='http://www.rubyfleebie.com/ruby-is-dynamically-and-strongly-typed/'>de tipado
     dinámico y fuerte</a>,
   orientado a objeto, reflexivo, que hasta no hace mucho no era
   demasiado rápido pero que últimamente está experimentando un
   incremento de rendimiento considerable. La versión estable actual es
-  la 2.1.1, aunque todavía se usan de forma extensa versiones
-  anteriores como la 1.9.3. Por supuesto que por lo que más se le sigue conociendo es
-  por Ruby on Rails, pero aplicaciones muy populares como Amarok o <a href="http://sketchup.com/">Sketchup</a> usan
+  la 2.1.4, aunque todavía se usan de forma extensa versiones
+  anteriores como la <a href='https://www.ruby-lang.org/es/news/2014/10/27/ruby-1-9-3-p550-is-released/'>1.9.3</a>. Por supuesto que por lo que más se le sigue conociendo es
+  por Ruby on Rails, pero aplicaciones muy populares como Amarok o <a href="http://www.sketchup.com/">Sketchup</a> usan
   este lenguaje. Y tú puedes tambien usarlo, si prestas atención y
   ejecutas los ejemplos de este tutorial, ¿por qué no?</p>
 
@@ -111,7 +111,7 @@ y que se instala directamente como una aplicación de usuario. Trabajar
     diferentes opciones para instalar RVM con/sin Rails y otra serie
     de opcioens</a>.</p>
 
-  <p>Para usar <a href='https://www.digitalocean.com/community/articles/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm'>directamente en el intérprete donde estás RVM</a>, un par de comandos más</p>:
+  <p>Para usar <a href='https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm'>directamente en el intérprete donde estás RVM</a>, un par de comandos más</p>:
   <code class='ejemplo'>bash$ source ~/.rvm/scripts/rvm
 rvm requirements</code>
   <p>Y, por supuesto, </p>
@@ -121,7 +121,7 @@ rvm requirements</code>
 <p>para usarlo.  Casi todos los manuales hoy en día aconsejan trabajar con RVM en vez de la versión que viene con la distribución.</p>
 
   <p>También hay otra forma de trabajar con entornos
-  virtuales: <a href='http://gorails.com/setup/ubuntu/13.10'><code>rbenv</code></a>. Los
+  virtuales: <a href='https://gorails.com/setup/ubuntu/13.10'><code>rbenv</code></a>. Los
   pasos seguidos son similares: se instala el entorno, se descarga y
     construye el intérprete, y posteriormente se selecciona el que
     deseemos. En vez de <code>curl</code>, <code>rbenv</code>
@@ -283,7 +283,7 @@ como, imagino, era de esperar. </p>
   aquellas que usan una clave para acceder a cada uno de los elementos
   (en vez de hacerlo en secuencia), sumamente útiles para evitar la
   distribución de la información de una estructura de datos por
-  múltiples matrices y su <a href='code/sonido.rb'>acceso fácil usando una clave</a></p>
+  múltiples matrices y su <a href='code/asociativa.rb'>acceso fácil usando una clave</a></p>
 <code class="ejemplo">sonido_de <span class="hl sym">= { :</span>vaca <span class="hl sym">=&gt;</span> <span class="hl str">'muuu'</span><span class="hl sym">,</span>
 	  <span class="hl sym">:</span>buho <span class="hl sym">=&gt;</span> <span class="hl str">'uuu'</span><span class="hl sym">,</span>
 	  <span class="hl sym">:</span>caballo <span class="hl sym">=&gt;</span> <span class="hl str">'iiiii'</span> <span class="hl sym">}</span>
@@ -300,7 +300,7 @@ puts sonido_de<span class="hl sym">.</span>inspect
 	  cadenas constantes, más o menos, que no es otra cosa lo que
 necesitamos en una variable asociativa (porque las claves, una vez
 	  establecidas, no se cambian, si acaso se añaden claves nuevas),
-	  denominada <a href="http://ruby-doc.org/core/classes/Hash.html">Hash</a>
+	  denominada <a href="http://ruby-doc.org/core-2.1.5/Hash.html">Hash</a>
 	  en Ruby. Por supuesto, se puede usar una cadena <a href='code/asociativa-normal.rb'>normal y
 	    corriente como clave</a>:
 <code class="ejemplo">precio_de <span class="hl sym">= {</span> <span class="hl str">"pipas"</span> <span class="hl sym">=&gt;</span> <span class="hl str">'bajo'</span><span class="hl sym">,</span>
@@ -632,14 +632,14 @@ osl<span class="hl sym">.</span><span class="hl kwd">search</span><span class="h
   buena, en general, e instructiva. </p>
 
 <p>Cuando ya estés harto de
-  Ruby, <a href="http://www.maestrosdelweb.com/editorial/rubyonrails/">también
+  Ruby, <a href="http://www.maestrosdelweb.com/rubyonrails/">también
     puedes aprender un poquico de Ruby on Rails</a>, ya puesto. </p>
 
 
 
 <br clear="all">
 
-<div class="licencia">Este material está <a href="http://curso-sobre.berlios.de/gfdles/">disponible bajo los términos de la licencia GNU FDL</a>. </div>
+<div class="licencia">Este material está <a href="http://www.gnu.org/copyleft/fdl.html">disponible bajo los términos de la licencia GNU FDL</a>. </div>
 
 <address><a href="mailto:jj%20%28at%29%20merelo.net">Juan J. Merelo</a></address>
   
