@@ -69,20 +69,20 @@
   este lenguaje. Y tú puedes tambien usarlo, si prestas atención y
   ejecutas los ejemplos de este tutorial, ¿por qué no?</p>
 
-<p>Si bien es cierto que los puestos de trabajo de Ruby tiene menos
+<p>Si bien es cierto que los puestos de trabajo de Ruby tienen menos
   demanda que los de otros lenguajes como Python, Perl o Javascript,
   también es cierto que hay una gran demanda de programadores senior
-  de Ruby, sobre todo Ruby on Rails y que en
+  de Ruby, sobre todo Ruby on Rails. En
   el <a href='http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html'>ránking
   TIOBE</a> está en el Top 20 de forma más o menos consistente y es el
   <a href='http://redmonk.com/sogrady/2014/01/22/language-rankings-1-14/'>7º
     más popular según RedMonk</a> (que mide proyectos nuevos en GitHub
-    y preguntas en StackOverflow), justo por debajo del C++. Y que
+    y preguntas en StackOverflow), justo por debajo del C++. Y 
   tiene una popularidad creciente en el área de <em>devops</em>, es
   decir, del área de sistemas para apoyar al desarrollo. En todo caso,
     <a href='http://kakubei.blogspot.com.es/2013/04/reasons-to-learn-ruby.html'>hay
       muchas razones</a>, incluyendo que
-  es un lenguaje más a conocer para añadir a una panoplia de herramientas.</p> 
+  es un lenguaje más a conocer para añadir a una panoplia de herramientas que todo informático debe tener.</p> 
 
 <h2><a name="2:instala">Instalando Ruby </a> <a href="#2:instala" style="font-size:small">#</a></h2>
 
@@ -90,7 +90,7 @@
     Debian, haz</p>
  <code>sudo apt-get install ruby irb rubygems rdoc</code>.
 
-<p>También puedes instalar
+<p>También puedes (y, de hecho, debes) instalar
   el <a href='https://www.ruby-lang.org/es/downloads/'>Ruby Version
   Manager</a>, que te permite trabajar con diferentes versiones de
   Ruby a la vez:
@@ -109,27 +109,28 @@ y que se instala directamente como una aplicación de usuario. Trabajar
   compiladores; una vez más, en la mayoría de los casos ya lo
   están). En <a href='https://rvm.io/rvm/install'>esta página da
     diferentes opciones para instalar RVM con/sin Rails y otra serie
-    de opcioens</a>.</p>
+    de alternativas</a>.</p>
 
-  <p>Para usar <a href='https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm'>directamente en el intérprete donde estás RVM</a>, un par de comandos más</p>:
+  <p>Para usar <a href='https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm'>directamente en el intérprete donde estás RVM</a>, un par de comandos más:</p>
   <code class='ejemplo'>bash$ source ~/.rvm/scripts/rvm
 rvm requirements</code>
   <p>Y, por supuesto, </p>
   <code class='ejemplo>rvm install ruby</code>
   <p>para instalar la última versión del intérprete de Ruby, y posteriormente</p>
   <code class='ejemplo'>rvm use ruby --default</code>
-<p>para usarlo.  Casi todos los manuales hoy en día aconsejan trabajar con RVM en vez de la versión que viene con la distribución.</p>
+<p>para usarlo.  Casi todos los manuales hoy en día aconsejan trabajar con RVM (o un entorno similar) en vez de la versión que viene con la distribución.</p>
 
-  <p>También hay otra forma de trabajar con entornos
-  virtuales: <a href='https://gorails.com/setup/ubuntu/13.10'><code>rbenv</code></a>. Los
+  <p>También hay otra forma de manejar desde espacio de usuario
+  diferentes versiones de
+  Ruby: <a href='https://gorails.com/setup/ubuntu/13.10'><code>rbenv</code></a>. Los 
   pasos seguidos son similares: se instala el entorno, se descarga y
     construye el intérprete, y posteriormente se selecciona el que
     deseemos. En vez de <code>curl</code>, <code>rbenv</code>
   usa <code>git</code> para descargarse (cuyo uso también aconsejamos
-  vivamente). </p>
+  vivamente, pero que tampoco viene instalado por omisión). </p>
 
-<p>En cuanto al intérprete de Ruby que se puede instalar, hay muchas
-  opciones; hay varias implementaciones de Ruby, aunque la más
+<p>Estos entornos te permiten instalar diferentes versiones de Ruby,
+  pero cómo elegir una debe tener en cuenta varios asuntos: hay varias implementaciones de Ruby, aunque la más
   popular es la <em>oficial</em>, la de Matz (llamada a veces
   MRI). Hay, sin embargo, otras como JRuby (dentro de la máquina
   virtual Java) o
@@ -147,7 +148,8 @@ rvm requirements</code>
 
 <p>Para programar en Ruby necesitas el editor y el intérprete de Ruby propiamente
   dicho. Descárgatelo e instálalo, aunque te vendrá bien también
-  bajarte <code>irb</code>, un intérprete interactivo que te permitirá
+  bajarte <code>irb</code>, un intérprete interactivo (un REPL:
+  Read-Eval-Print loop) que te permitirá
   probar cosas sobre la marcha (viene incluido con los entornos virtuales). Servidor usa Emacs como editor, pero
   cualquier otra cosa también servirá, incluso Notepad. Ahora, si
   quieres ir un poco más allá, te puedes
@@ -189,8 +191,7 @@ puts <span class="hl str">"Esto es jauja"</span></code>
   lugar donde esté instalado Ruby, basta con que esté en el camino de ejecución</p>
 
   <p>La siguiente línea no vacía ya sí está escrita en el lenguaje Ruby (aunque
-  usa la misma orden que C, <code>put
-  string</code>), pero tampoco es que extrañe demasiado. La cadena va
+  usa la misma orden que C, <code>put string</code>), pero tampoco es que extrañe demasiado. La cadena va
   entre comillas, se usa el cambio de línea para acabar la sentencia,
     y ya está.</p>
 
